@@ -67,3 +67,63 @@ var goodsCount = 0;
 check.forEach(x => (goodsCount += x.count));
 let avg = fullPrice / goodsCount;
 document.write(`<p>AVRG: ${avg}</p>`);
+
+/*3*/
+document.write(`<h2>--3--</h2>`);
+let styleArray = [
+    { name: "color", value: "red"},
+    { name: "font-size", value: "13px"},
+    { name: "font-style", value: "italic"},
+    { name: "font-weight", value: "bold"},
+    { name: "font-family", value: "Arial"}
+]
+let startLine = `<p style = "`;
+let endLine = `">HELLO WORLD</p>`;
+styleArray.forEach(x => startLine += `${x.name}: ${x.value}; `);
+startLine += endLine;
+document.write(startLine);
+
+/*4.1*/
+document.write(`<h2>--4--</h2>`);
+document.write(`<h3>4.1</h3>`);
+let lectureRooms = [
+    { name: "B-A2", seats: 15, faculty: "TheBesst"},
+    { name: "FR-T", seats: 10, faculty: "Bad"},
+    { name: "YU-Y7", seats: 14, faculty: "What"},
+    { name: "AXF", seats: 13, faculty: "What"},
+    { name: "YHW", seats: 12, faculty: "What"},
+    { name: "CVB", seats: 16, faculty: "Bad"},
+    { name: "N-T6", seats: 20, faculty: "TheBesst"},
+    { name: "MMM", seats: 19, faculty: "TheBesst"},
+    { name: "O-OP9", seats: 18, faculty: "Bad"},
+    { name: "QWERTY", seats: 15, faculty: "What"},
+]
+lectureRooms.forEach(x => document.write(`<p>${x.name}, ${x.seats}, ${x.faculty}</p>`));
+/*4.2*/
+document.write(`<h3>4.2</h3>`);
+let byFaculty = lectureRooms.filter(function(x)
+    {
+        return x.faculty == "TheBesst";
+    }
+);
+byFaculty.forEach(x => document.write(`<p>${x.name}, ${x.seats}, ${x.faculty}</p>`));
+/*4.3*/
+document.write(`<h3>4.3</h3>`);
+let group1 = { name: "CoolGroup", studentCount: 16, faculty: "TheBesst"};
+let resRooms = lectureRooms.filter(function(x)
+    {
+        return (x.faculty == group1.faculty && x.seats >= group1.studentCount);
+    }
+);
+resRooms.forEach(x => document.write(`<p>${x.name}, ${x.seats}, ${x.faculty}</p>`));
+/*4.4*/
+document.write(`<h3>4.4</h3>`);
+lectureRooms.sort((x,y) => y.seats - x.seats);
+lectureRooms.forEach(x => document.write(`<p>${x.name}, ${x.seats}, ${x.faculty}</p>`));
+/*4.5*/
+document.write(`<h3>4.5</h3>`);
+lectureRooms.sort((x, y) => {
+    if ( x.name < y.name ) return -1;
+    if ( x.name > y.name ) return 1;
+});
+lectureRooms.forEach(x => document.write(`<p>${x.name}, ${x.seats}, ${x.faculty}</p>`));
