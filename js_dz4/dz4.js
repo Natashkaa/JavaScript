@@ -14,7 +14,6 @@ function stringStat(str){
     return res;
 }
 document.write(`<p>${stringStat("HelloWorlsd12345!*-=")}</p>`);
-
 /*2*/
 document.write(`<h2>--2--</h2>`);
 let dozens = [ "ноль", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"];
@@ -33,10 +32,8 @@ function NumbersInWords(num){
             return dozens[res[0]] + " " + numbers[res[1]];
         }
     }
-   
 }
 document.write(`<p>${NumbersInWords(98)}</p>`);
-
 /*3*/
 document.write(`<h2>--3--</h2>`);
 function switchCase(str){
@@ -62,7 +59,6 @@ function switchNumbers(str){
 }
 document.write(`<p>ABCdefgHIJKlmnOP1234</p>`);
 document.write(`<p>${switchCase("ABCdefgHIJKlmnOP1234")}</p>`);
-
 /*4*/
 document.write(`<h2>--4--</h2>`);
 function CamelCase(str){
@@ -75,7 +71,6 @@ function CamelCase(str){
 };
 document.write(`<p>test1-t</p>`);
 document.write(`<p>${CamelCase("camel-case; font-size; backgroung-color")}</p>`);
-
 /*5*/
 document.write(`<h2>--5--</h2>`);
 function createAbbreviation(str){
@@ -91,7 +86,6 @@ function createAbbreviation(str){
 };
 document.write(`<p>cascading style sheets</p>`);
 document.write(`<p>${createAbbreviation("cascading style sheets")}</p>`);
-
 /*6*/
 document.write(`<h2>--6--</h2>`);
 function longString(...arg){
@@ -105,8 +99,7 @@ function longString(...arg){
     };
 };
 document.write(`<p>${longString("Hello", "WORLD", "! ", "SUP", "?")}</p>`);
-
-/*7*/
+/*7?*/
 document.write(`<h2>--7--</h2>`);
 function addbits(s) {
     var total = 0;
@@ -116,3 +109,56 @@ function addbits(s) {
 };
 document.write(`<p>${addbits('2+2*2+3')}</p>`);
 document.write(`<p>${eval('(4+2*2+3+10-1)/2')}</p>`);
+/*8*/
+document.write(`<h2>--8--</h2>`);
+function urlInfo(url){
+    let regExp = /[^\:\/\/]/g;
+    let info = url.split(':');
+    let protocol = info[0];
+    let fullDomain = "";
+    let path = "";
+    let res = "";
+    info = info[1].replace(/\/\//g, '');
+    let domainArr = info.match(/\w*\.\w*/g);
+    for(let i = 0; i < domainArr.length; i++){
+        fullDomain += `${domainArr[i]}`;
+    }
+    info = info.replace(/\w*\.\w*/g, '');
+    path = info;
+    res = `Protocol: ${protocol}<br>
+           Domain: ${fullDomain}<br>
+           Path: ${path}`;
+    return res;
+};
+document.write(`<p>${urlInfo("https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp")}</p>`);
+document.write(`<p>${urlInfo("https://itstep.org/ua/about")}</p>`);
+/*9*/
+document.write(`<h2>--9--</h2>`);
+function splitString(str, sign){
+    const regExp = new RegExp('\\w*[^\\' + sign + ']', 'g');
+    let res = str.match(regExp);
+    return res;
+};
+document.write(`<p>${splitString("Hello-World-love-cats", '-')}</p>`);
+/*10*/
+document.write(`<h2>--10--</h2>`);
+function printF(...arg){
+    if(arg.length == 0){
+        return "nothing here";
+    }
+    else if(arg.length == 1){
+        return "you forgot smth";
+    }
+    else{
+        let text = arg[0];
+        text = text.replace(/[\%][0-9]*/g, function(x) {
+            x = x.replace('%', '');
+            return x.replace(parseInt(x), arg[parseInt(x)]);
+        });
+        return text;
+    }
+};
+document.write(`<p>"Today is %1 %2.%3.%4", "Monday", 10,8, 2020</p>`);
+document.write(`<p>${printF("Today is %1 %2.%3.%4", "Monday", 10,8, 2020)}</p>`);
+document.write(`<p>"Text -> %1 %2%4 %3! ASDSD", "Hello", "World", "SHMECK", "KEK"</p>`);
+document.write(`<p>${printF("Text -> %1 %2%4 %3! ASDSD", "Hello", "World", "SHMECK", "KEK")}</p>`);
