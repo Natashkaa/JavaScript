@@ -27,3 +27,20 @@ document.write(`<p>Radius: ${circle1.Radius}<br>
                    Diameter: ${circle1.Diameter}<br>
                    Square: ${circle1.Square()}<br>
                    Perimeter: ${circle1.Perimeter()}</p>`);
+/*2*/
+document.write(`<h3>--2--</h3>`);
+class HtmlElement{
+    constructor(tag, isSelfClosing, text){
+        this.tag = tag;
+        this.isSelfClosing = isSelfClosing;
+        this.text = text;
+    }
+    getHtml(){
+        if(this.isSelfClosing){
+            return `<${this.tag}>${this.text}</${this.tag}>`;
+        }
+        else{return 0;}
+    }
+}
+let htmlEl = new HtmlElement("h1", true, "Hello world!");
+document.write(htmlEl.getHtml());
