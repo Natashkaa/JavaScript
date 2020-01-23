@@ -26,6 +26,7 @@ document.addEventListener('click', function(event){
     ball.style.top = coords.y + 'px'
 });
 /*2*/
+
 let lamps = document.getElementsByClassName("lamp");
 let current = 1;
 let last = current - 1;
@@ -61,3 +62,34 @@ book_list.onclick = function(event) {
     selectedLi = curLi;
     selectedLi.style.backgroundColor = "rgb(148, 221, 148)";
   }
+  /*4*/
+let tooltipElem;
+
+document.onmouseover = function(event) {
+    let target = event.target;
+    let tooltipHtml = target.dataset.tooltip;
+    if (!tooltipHtml) return;
+
+    tooltipElem = document.createElement('div');
+    tooltipElem.className = 'tooltip';
+    tooltipElem.innerHTML = tooltipHtml;
+    document.body.append(tooltipElem);
+    let coords = target.getBoundingClientRect();
+
+    let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+    if (left < 0) left = 0;
+
+    let top = coords.top - tooltipElem.offsetHeight - 5;
+    if (top < 0) {
+        top = coords.top + target.offsetHeight + 5;
+    }
+    tooltipElem.style.left = left + 'px';
+    tooltipElem.style.top = top + 'px';
+};
+
+document.onmouseout = function(e) {
+    if (tooltipElem) {
+        tooltipElem.remove();
+        tooltipElem = null;
+    }
+};
