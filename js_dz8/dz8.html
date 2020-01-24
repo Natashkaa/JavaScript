@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>dz8</title>
     <link rel="stylesheet" href="dz8.css">
 </head>
+
 <body>
     <div class="list-container">
         <ul class="list" id="book_list">
@@ -18,7 +20,32 @@
             <li><a href="#">/local/path</a></li class="lii">
         </ul>
     </div>
-    
+
+    <div class="dirs-tree">
+        <ul id="tree_ul">
+            <li><span class="opend">This Pc</span>
+                <ul class="nested">
+                    <li><span class="opend">Local Disk (C:)</span>
+                        <ul class="nested">
+                            <li>Program Files</li>
+                            <li>Users</li>
+                            <li>Windows</li>
+                        </ul>
+                    </li>
+                    <li><span class="opend">Local disk (D:)</span>
+                        <ul class="nested">
+                            <li>New Folder 1</li>
+                            <li>New Folder 2</li>
+                            <li>New Folder 3</li>
+                        </ul>
+                    </li>
+                    <li>Local Disk (E:)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <script src="dz8.js"></script>
 </body>
+
 </html>

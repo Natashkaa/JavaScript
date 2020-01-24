@@ -1,9 +1,5 @@
 /*1*/
-document.body.style.background = 'red'; // сделать фон красным
 let elements = document.querySelectorAll('ul > li > a');
-// elements.forEach( e => e.addEventListener('mouseenter', function(event){
-//     e.style.color = "white";
-// }));
 elements.forEach( function(e) { 
     var regV1 = /https:\/\//g; 
     var regV2 = /http:\/\//g; 
@@ -14,3 +10,12 @@ elements.forEach( function(e) {
         return e.className = "liiClear";
     }
 });
+/*2*/
+var buttonLiArr = document.getElementsByClassName("opend");
+var i;
+
+for (i = 0; i < buttonLiArr.length; i++) {
+    buttonLiArr[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+  });
+}

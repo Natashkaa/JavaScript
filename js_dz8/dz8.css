@@ -22,3 +22,24 @@ li a{
     text-decoration-style: none;
     text-decoration-line: none;
 }
+
+/*2*/
+.dirs-tree{
+    background-color: antiquewhite;
+}
+#tree_ul {
+    margin: 0;
+}
+.opend{
+    cursor: pointer;
+    user-select: none;
+}
+.nested {
+    display: none;
+}
+.active {
+    display: block;
+}
+.opend:hover{
+      font-weight: bold;
+}
