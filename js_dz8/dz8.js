@@ -5,13 +5,12 @@ let elements = document.querySelectorAll('ul > li > a');
 //     e.style.color = "white";
 // }));
 elements.forEach( function(e) { 
-    // var regV = /https:\/\//g; 
-    // var result = e.match(regV);
-    // if(result){
-    //     e.style.textDecorationStyle = "dotted";
-    // }
-    // else{
-    //     e.style.textDecorationStyle = "none";
-    // }
-    return e.style.textDecorationStyle = "dotted";
+    var regV1 = /https:\/\//g; 
+    var regV2 = /http:\/\//g; 
+    if(e.text.match(regV1) || e.text.match(regV2)){
+        return e.className = "liiDot";
+    }
+    else{
+        return e.className = "liiClear";
+    }
 });

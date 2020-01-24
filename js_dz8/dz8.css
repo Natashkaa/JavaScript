@@ -15,6 +15,10 @@ li a{
 .list a:hover{
     color: rgb(109, 39, 223)
 }
-.lii{
+.liiDot{
     text-decoration-style: dotted;
+}
+.liiClear{
+    text-decoration-style: none;
+    text-decoration-line: none;
 }
