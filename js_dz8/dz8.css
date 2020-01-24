@@ -1,0 +1,20 @@
+.list-container{
+    background-color: antiquewhite;
+    padding: 10px
+}
+.list{
+    list-style-type: circle
+}
+.list li{
+    margin: 5px;
+    font-size: 20px;
+}
+li a{
+    color: black;
+}
+.list a:hover{
+    color: rgb(109, 39, 223)
+}
+.lii{
+    text-decoration-style: dotted;
+}
