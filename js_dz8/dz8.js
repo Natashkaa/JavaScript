@@ -24,7 +24,18 @@ let ind1 = 0;
 let ind2 = 0;
 let selectedLi;
 document.addEventListener('keydown', function(event) {
-        key = event;
+        //key = event;
+        if (event.ctrlKey && event.keyCode == 69) {
+            event.preventDefault();
+            event.stopPropagation();
+            changeText();
+        }
+        else if (event.ctrlKey && event.keyCode == 83) {
+            event.preventDefault();
+            event.stopPropagation();
+            saveText();
+        }
+        else{ key = event;}
 });
 document.addEventListener('keyup', function(event) {
     key = undefined;
@@ -74,7 +85,28 @@ function highlight(curLi) {
         curLi.classList.add("orangeLi");
     }
     key = undefined;
+};
+/*4*/
+let textDiv = document.getElementById("some_text");
+let textArea = document.getElementById("txt_area");
+let text = textDiv.innerText;
+function changeText(){
+    textArea.classList.add("show-textarea");
+    textArea.value = text;
+    textDiv.classList.add("hide-textdiv");
+};
+function saveText(){
+    if(textDiv.classList.contains("hide-textdiv")){
+        text = textArea.value;
+        textArea.classList.remove("show-textarea");
+        textDiv.innerText = text;
+        textDiv.classList.remove("hide-textdiv");
+    }
 }
+
+
+
+
 
 
 

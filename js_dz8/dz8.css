@@ -52,12 +52,28 @@ li a{
     align-items: center;
     justify-content: center;
     -moz-user-select: none;
--khtml-user-select: none;
-user-select: none; 
+    -khtml-user-select: none;
+    user-select: none; 
 }
 .book-list{
     width: 50%;
 }
 .orangeLi{
     background-color: brown;
+}
+/*4*/
+.edit-text{
+    background-color: rgb(255, 220, 226);
+    padding: 10px;
+}
+#txt_area{
+    display: none
+}
+.show-textarea{
+    display: block !important;
+    background-color: rgb(221, 242, 255);
+    width: 100%;
+}
+.hide-textdiv{
+    display: none;
 }
