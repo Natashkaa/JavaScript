@@ -103,11 +103,26 @@ function saveText(){
         textDiv.classList.remove("hide-textdiv");
     }
 }
-
-
-
-
-
-
-
+/*5*/
+var sort_tbl = document.getElementsByClassName("sort");
+for(let i = 0; i < sort_tbl.length; i++){
+    sort_tbl[i].onclick = function(event) {
+        let ind = event.currentTarget.cellIndex;
+        if(ind == 2)
+        {
+            let sortedRows = Array.from(table.rows)
+                                .slice(1)
+                                    .sort((rowA, rowB) => parseInt(rowA.cells[ind].innerHTML) > parseInt(rowB.cells[ind].innerHTML) ? 1 : -1);
+            table.tBodies[0].append(...sortedRows);
+            return;
+        }
+        else{
+            let sortedRows = Array.from(table.rows)
+                                .slice(1)
+                                    .sort((rowA, rowB) => rowA.cells[ind].innerHTML > rowB.cells[ind].innerHTML ? 1 : -1);
+            table.tBodies[0].append(...sortedRows);
+            return;
+        }
+    }
+}
 

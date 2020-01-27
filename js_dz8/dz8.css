@@ -77,3 +77,20 @@ li a{
 .hide-textdiv{
     display: none;
 }
+/*5*/
+.table-container{
+    background-color: rgb(177, 177, 122);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px
+}
+.table-container table{
+    border: 2px solid white;
+    border-radius: 10px;border-collapse: collapse;
+}
+.table-container table td, th{
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 20px;
+}
