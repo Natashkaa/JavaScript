@@ -29,5 +29,25 @@
     height: 30px;
     margin: 0 5px 0 0;
     display: inline-flex;
-    background-color: red
+    background-color: red;
+    
+}
+
+/*3*/
+.color-div{
+    background-color: rgb(245, 228, 192);
+    padding: 10px;
+}
+.colors{
+    width: 180px;
+}
+.item-color{
+    height: 15px;
+    width: 15px;
+    display: inline-flex;
+    border: 0.2px solid black;
+    cursor: pointer;
+}
+#some-text{
+    margin-top: 10px
 }
