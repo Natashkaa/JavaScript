@@ -1,0 +1,33 @@
+/*1*/
+.main-container{
+    background-color: rgb(255, 250, 183);
+    width: 110px;
+    height: 52px
+}
+
+.number{
+    display: block;
+    height: 25px;
+    font-size: 20px;
+    background-color: rgb(236, 232, 172);
+}
+.btns{
+    display: block;
+}
+.button{
+    display: inline-block;
+    height: 25px;
+    width: 48%;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid rgb(255, 187, 0);
+}
+
+/*2*/
+.el-d{
+    width: 50px;
+    height: 30px;
+    margin: 0 5px 0 0;
+    display: inline-flex;
+    background-color: red
+}
