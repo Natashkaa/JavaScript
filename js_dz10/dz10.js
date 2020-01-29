@@ -25,5 +25,18 @@ $('.item-color').click(function (){
     $('#some-text').css({color: `${c}`});
 });
 
+/*4*/
+let name;
+let comm;
+let date;
 
-
+$('#add_button').click(function (){
+    name = $('#add_name').val();
+    comm = $('#add_comment').val();
+    date = `${new Date().getDate()}.${(new Date().getUTCMonth())+1}.${new Date().getFullYear()}`;
+    /**add*/ 
+    $('.comments').append($('<div />').append($(`<h5 />`, { "class": 'name', "text": `${name}`}))
+                                      .append($(`<p />`, {"class": 'date', "text": `${date}`}))
+                                      .append($(`<p />`, {"class": 'comment', "text": `${comm}`}))
+                                      .append($('<hr />')));                                         
+});
