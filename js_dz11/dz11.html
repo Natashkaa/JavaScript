@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dz11</title>
+    <link rel="stylesheet" href="dz11.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="form-container">
+            <h3>Create new color</h3>
+            <span>Color:</span><span id="warn_color">Color can onlu contain letters</span>
+            <input class="inp-color" id="inp_color" type="text">
+            <span>Type</span>
+            <select class="inp-type" id="inp_type">
+                <option>RGB</option>
+                <option>RGBA</option>
+                <option>HEX</option>
+            </select>
+            <span>Code:</span><span id="warn_code">RGD code must match the pattern [0-255],[0-255],[0-255]</span>
+            <input class="inp-code" id="inp_code" type="text" maxlength="11">
+            <input id="add_button" type="button" value="Add">
+            <h3>All colors:</h3>
+        </div>
+
+        <div class="all-colors-container" id="ac_container">
+            <div class="main-color" id="green">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>YELLOWGREEN</b></p>
+                        <span>GRB</span>
+                        <p><b>154, 205, 50</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-color" id="blue">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>DARKCYAN</b></p>
+                        <span>GRBA</span>
+                        <p><b>0, 139, 139, 1</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-color" id="orange">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>ORANGERED</b></p class="desc">
+                        <span>HEX</span>
+                        <p><b>#FF4500</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-color" id="gray">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>GRAY</b></p class="desc">
+                        <span>rgb</span>
+                        <p><b>80, 76, 76</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-color" id="red">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>RED</b></p class="desc">
+                        <span>rgb</span>
+                        <p><b>255, 0, 0</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-color" id="violet">
+                <div class="sec-color">
+                    <div class="color-desc">
+                        <p class="desc"><b>VIOLET</b></p class="desc">
+                        <span>rgba</span>
+                        <p><b>142, 0, 185, 0.582</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="dz11.js"></script>
+</body>
+
+</html>
