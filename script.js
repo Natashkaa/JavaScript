@@ -2,7 +2,6 @@
 let removeBtn = document.getElementById('removeBtn');
 let out = document.getElementById('out');
 
-out.innerText =  getCookie("name");
 
 
 
@@ -12,8 +11,7 @@ addBtn.addEventListener('click', function () {
 
 
 removeBtn.addEventListener('click', function () {
-    //eraseCookie("name");
-    document.write(document.cookie[0]);
+    eraseCookie("name");
 });
 
 
