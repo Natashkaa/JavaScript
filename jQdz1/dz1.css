@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}
+.main2{
+    width: 100%;
+    height: 100%;
+    display: flex
+}
+.left-block, .right-block{
+    width: 100%;
+    height: 100%
+}
+.blue{
+    background-color: rgb(176, 255, 244);
+    width: 100%;
+    height: 300px
+}
+.pink{
+    background-color: rgb(255, 198, 255);
+    width: 100%;
+    height: 300px
+}
+.btn{
+    background-color: rgb(187,197,194);
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 10px;
+}
+.hide-arr{
+    display: none;
+}
+.green{
+    background-color: rgb(176, 255, 176);
+    width: 100%;
+    height: 500px
+}
+.orange{
+    background-color: rgb(255,230, 176);
+    width: 100%;
+    height: 100px
+}
+.up{
+    background-color: rgb(130, 130, 226);
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+}
