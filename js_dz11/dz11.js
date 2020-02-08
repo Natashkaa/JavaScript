@@ -120,3 +120,144 @@ function work(colorName, type, colorcode){
     newColor.append(seccolor);
     all.append(newColor);
 }
+
+/*2*/
+function draw() {
+    /*circle*/
+    let circle = document.getElementById('circle');
+    let context = circle.getContext('2d');
+    let centerX = circle.width / 2;
+    let centerY = circle.height / 2;
+    let radius = 20;
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+    context.fillStyle = 'rgb(202, 202, 202)';
+    context.fill();
+    context.lineWidth = 5;
+    context.strokeStyle = 'rgb(202, 202, 202)';
+    context.stroke();
+    /*rhombus*/
+    let romb = document.getElementById('rhombus');
+    if (romb.getContext){
+      let ctx = romb.getContext('2d');
+      let X = romb.width/2;
+      let Y = romb.height/2;
+      ctx.beginPath();
+      ctx.moveTo(X,0);
+      ctx.lineTo(0, Y);
+      ctx.lineTo(X, Y*2);
+      ctx.lineTo(X*2, Y);
+      ctx.fillStyle = "rgb(202, 202, 202)";
+      ctx.fill();
+    }
+    /*triangle*/
+    let trian = document.getElementById('trian');
+    if (trian.getContext){
+      let ctx = trian.getContext('2d');
+      let X = 0;
+      let Y = 0;
+      
+      ctx.beginPath();
+      ctx.moveTo(X,Y);
+      ctx.lineTo(0, trian.height);
+      ctx.lineTo(trian.width, trian.width);
+      ctx.fillStyle = "rgb(202, 202, 202)";
+      ctx.fill();
+    }
+}
+document.onload = draw();
+
+let checkboxes = document.getElementsByClassName('check');
+let figure;
+Array.from(checkboxes).forEach(e => {
+    e.addEventListener('click', function(){
+        if(e.checked){
+            figure = e.name;
+        }
+        else{
+            figure = null
+        }
+    });
+});
+/*get color*/
+let cur_color = "rgb(202, 202, 202)";
+let colorsArr = document.getElementsByClassName('item-color');
+Array.from(colorsArr).forEach(e => {
+    e.addEventListener('click', function(){
+        cur_color = e.dataset.color;
+    });
+});
+
+let paint = document.getElementById('paint');
+paint.addEventListener('click', function(event){
+    let relX = event.pageX - paint.offsetLeft;
+    var relY = event.pageY - paint.offsetTop;
+    if(figure == "romb"){
+        drawRhombus(relX, relY, paint);
+    }
+    else if(figure == "rect"){
+        drawRect(relX, relY, paint);
+    }
+    else if(figure == "trian"){
+        drawTrian(relX, relY, paint);
+    }
+    else if(figure == "circle"){
+        drawCircle(relX, relY, paint);
+    }
+});
+
+function drawRhombus(relX, relY, paint){
+    let X = relX;
+    let Y = relY;
+    if (paint.getContext){
+        let ctx = paint.getContext('2d');
+      
+        ctx.beginPath();
+        ctx.moveTo(X, Y - 50/2);
+        ctx.lineTo(X - 50/2, Y);
+        ctx.lineTo(X, Y + 50/2);
+        ctx.lineTo(X + 50/2, Y);
+        ctx.fillStyle = cur_color;
+        ctx.fill();
+    }
+};
+function drawRect(relX, relY, paint){
+    let X = relX;
+    let Y = relY;
+    if (paint.getContext){
+        let ctx = paint.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(X - 50/2, Y - 50/2);
+        ctx.lineTo(X - 50/2, Y + 50/2);
+        ctx.lineTo(X + 50/2, Y + 50/2);
+        ctx.lineTo(X + 50/2, Y-50/2);
+        ctx.fillStyle = cur_color;
+        ctx.fill();
+    }
+};
+function drawTrian(relX, relY, paint){
+    let X = relX;
+    let Y = relY;
+    if (paint.getContext){
+        let ctx = paint.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(X - 50/2, Y-50/2);
+        ctx.lineTo(X-50/2, Y+50/2);
+        ctx.lineTo(X+50/2, Y+50/2);
+        ctx.fillStyle = cur_color;
+        ctx.fill();
+    }
+};
+function drawCircle(relX, relY, paint){
+    let X = relX;
+    let Y = relY;
+    let context = paint.getContext('2d');
+    let centerX = X;
+    let centerY = Y;
+    let radius = 20;
+
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+    context.fillStyle = cur_color;
+    context.fill();
+};
